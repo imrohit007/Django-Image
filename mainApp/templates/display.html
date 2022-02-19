@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload Your Image</title>
+        <link href="{% static 'css\base.css' %}" rel='stylesheet'>
+    </head>
+<body>
+    <div id="header">
+        <span class='logo'>Image Uploader</span>
+    </div>
+    {% for profile in profile_img %}
+            <div>
+                <img src="{{ profile.image.url }}"  height="200" width="200" />
+                <div>
+                    <h1>{{ profile.name }}</h1>
+                    <h2>
+                        {{ profile.designation }}
+                    </h2>
+                </div>
+                
+            </div>
+    {% endfor %}
+  
+</body>
+</html>
